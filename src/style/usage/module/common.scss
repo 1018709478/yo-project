@@ -1,0 +1,118 @@
+@import "../fragment/yo-header";
+@import "../fragment/yo-number.scss";
+@import '../fragment/yo-search.scss';
+/* * { -ms-touch-action: none; touch-action: none; }*/
+#root{
+	height:100%;
+	width: 100%;
+	position: relative;
+	max-width: 750px;
+	margin: 0 auto;
+}
+input{
+	border: none;
+}
+section{
+  height: 100%;
+	position: relative;
+}
+header{
+    height:.44rem;
+    color:#333;
+    ul{
+      width:100%;
+      height:100%;
+      @include flexbox();
+      @include flex-direction();
+        li:nth-child(1){
+          @include flex(1);
+          span{
+            display:block;
+            width:100%;
+            height:100%;
+            @include flexbox();
+            @include flex-direction();
+            @include align-items(center);
+            @include justify-content(center);
+            img{
+              width:.2rem;
+              height:.2rem;
+            }
+          }
+        }
+        li:nth-child(2){
+           @include flex(7);
+        }
+        li:nth-child(3){
+          @include flex(1);
+          span{
+            display:block;
+            width:100%;
+            height:100%;
+            @include flexbox();
+            @include flex-direction();
+            @include align-items(center);
+            @include justify-content(center);
+            img{
+              width:.2rem;
+              height:.2rem;
+            }
+          }
+        }
+    }
+    @include border(1px 0 0 0, #fff);
+    p{
+      width:100%;
+      height:100%;
+      text-align:center;
+      font-size:.16rem;
+      font-weight:bold;
+      line-height:.44rem;
+    }
+    .leMa{
+      .yo-ico{
+        font-size:.3rem;
+        float:right;
+        display:inline-block;
+        margin: 0 0.1rem;
+      }
+    }
+  }
+  .guang{
+      display:block;
+      font-size:.12rem;
+      background:rgba(0,0,0,0.3);
+      color:#fff;
+      width:.3rem;
+      height:.14rem;
+      position:absolute;
+      z-index: 999;
+      right:0;
+      bottom: 0;
+      text-align: center;
+      line-height:.14rem;
+    }
+@font-face {
+  font-family: yofont;
+  src: url(/iconfont/iconfont.woff) format("woff"),
+  url(/iconfont/iconfont.ttf) format("truetype");
+}
+@font-face {
+  font-family: yofont;
+  src: url(/iconfont/iconfont-le.woff) format("woff"),
+   url(/iconfont/iconfont-le.ttf) format("truetype");
+}
+@include yo-header(
+  $bgcolor: #fff,
+  $color:#333,
+  $border-width:0 0 1px 0,
+	$border-color:#dddddd,
+  $font-size: .18rem,
+  $item-ico-size: .18rem,
+	$item-ico-color:#1c1c1c
+)
+@include yo-search(
+  $bgcolor:#fff,
+  $font-size:0.14rem,
+  $input-bgcolor:#eee
+)
